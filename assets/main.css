@@ -237,11 +237,12 @@ body {
     margin: 0 auto;
 }
 
-/* 页脚 */
+/* 页脚样式 */
 .site-footer {
     background-color: var(--nav-bg);
     padding: 2rem 0;
     margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -249,21 +250,43 @@ body {
     margin: 0 auto;
     padding: 0 1rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .social-links {
-    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .social-link {
     color: var(--text-color);
-    margin: 0 0.5rem;
     font-size: 1.5rem;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--bg-color);
 }
 
 .social-link:hover {
     color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* 暗色模式适配 */
+.dark-mode .site-footer {
+    border-top-color: var(--border-color);
+}
+
+.dark-mode .social-link {
+    background-color: var(--nav-bg);
 }
 
 /* 响应式设计 */
