@@ -1,0 +1,31 @@
+---
+layout: default
+title: Tags
+---
+
+<div class="tags-page">
+    <h1 class="page-title">文章标签</h1>
+
+    <div class="tags-container">
+        {% assign tags = site.tags | sort %}
+        {% for tag in tags %}
+        <div class="tag-section">
+            <h2 class="tag-title" id="{{ tag[0] }}">
+                <i class="fas fa-tag"></i> {{ tag[0] }}
+                <span class="tag-count">({{ tag[1].size }})</span>
+            </h2>
+
+            <ul class="tag-posts">
+                {% for post in tag[1] %}
+                <li class="tag-post-item">
+                    <a href="{{ post.url | relative_url }}" class="tag-post-link">
+                        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                        <span class="post-title">{{ post.title }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tags</title>
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // 切换明暗模式的脚本
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+        }
+
+        // 初始化明暗模式
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('dark-mode') === 'true') {
+                document.body.classList.add('dark-mode');
+            }
+        });
+
+        // 文件夹展开/折叠功能
+        function toggleFolder(element) {
+            const folder = element.parentElement;
+            const fileList = folder.querySelector('.file-list');
+            const icon = folder.querySelector('.folder-icon');
+
+            fileList.classList.toggle('show');
+            if (fileList.classList.contains('show')) {
+                icon.classList.remove('fa-folder');
+                icon.classList.add('fa-folder-open');
+            } else {
+                icon.classList.remove('fa-folder-open');
+                icon.classList.add('fa-folder');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="/" class="site-title-link">
+                    <h1 class="site-title">MaxizYB's Blog</h1>
+                </a>
+                <p class="quote-text">Stay hungry, stay foolish.</p>
+            </div>
+            <nav class="main-nav">
+                <a href="/" class="nav-link ">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/about/"
+                    class="nav-link ">
+                    <i class="fas fa-user"></i> About
+                </a>
+                <button class="theme-toggle" onclick="toggleDarkMode()">
+                    <i class="fas fa-moon"></i> 切换主题
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <!-- 左侧导航栏 -->
+        <aside class="side-nav">
+            <div class="nav-header">
+                <h3><i class="fas fa-folder-tree"></i> 文章分类</h3>
+            </div>
+            <ul class="nav-list">
+                
+                
+                <li class="folder">
+                    <div class="folder-header" onclick="toggleFolder(this)">
+                        <i class="fas fa-folder folder-icon"></i>
+                        <span class="folder-name">jekyll</span>
+                        <span class="folder-count">(2)</span>
+                    </div>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <a href="/blog/2025/04/24/welcome.html" class="file-link">
+                                <span class="file-title">Welcome</span>
+                                <span class="file-date">2025-04-24</span>
+                            </a>
+                        </li>
+                        
+                        <li class="file-item">
+                            <a href="/blog/2025/04/24/welcome-to-jekyll.html" class="file-link">
+                                <span class="file-title">Welcome to Jekyll!</span>
+                                <span class="file-date">2025-04-24</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+            </ul>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="tags-page">
+    <h1 class="page-title">文章标签</h1>
+
+    <div class="tags-container">
+        
+        
+        <div class="tag-section">
+            <h2 class="tag-title" id="jekyll">
+                <i class="fas fa-tag"></i> jekyll
+                <span class="tag-count">(2)</span>
+            </h2>
+
+            <ul class="tag-posts">
+                
+                <li class="tag-post-item">
+                    <a href="/blog/2025/04/24/welcome.html" class="tag-post-link">
+                        <span class="post-date">2025-04-24</span>
+                        <span class="post-title">Welcome</span>
+                    </a>
+                </li>
+                
+                <li class="tag-post-item">
+                    <a href="/blog/2025/04/24/welcome-to-jekyll.html" class="tag-post-link">
+                        <span class="post-date">2025-04-24</span>
+                        <span class="post-title">Welcome to Jekyll!</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; MaxizYB - 2025</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
