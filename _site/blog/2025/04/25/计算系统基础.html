@@ -1,4 +1,155 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-25T12:32:08+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">MaxizYB’s Blog</title><subtitle>A personal blog powered by Jekyll.</subtitle><author><name>MaxizYB</name></author><entry><title type="html">计算系统基础</title><link href="http://localhost:4000/blog/2025/04/25/%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80.html" rel="alternate" type="text/html" title="计算系统基础" /><published>2025-04-25T12:00:01+08:00</published><updated>2025-04-25T12:00:01+08:00</updated><id>http://localhost:4000/blog/2025/04/25/%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80</id><content type="html" xml:base="http://localhost:4000/blog/2025/04/25/%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80.html"><![CDATA[<h1 id="计算系统基础">计算系统基础</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>计算系统基础</title>
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // 切换明暗模式的脚本
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+        }
+
+        // 初始化明暗模式
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('dark-mode') === 'true') {
+                document.body.classList.add('dark-mode');
+            }
+        });
+
+        // 文件夹展开/折叠功能
+        function toggleFolder(element) {
+            const folder = element.parentElement;
+            const fileList = folder.querySelector('.file-list');
+            const icon = folder.querySelector('.folder-icon');
+
+            fileList.classList.toggle('show');
+            if (fileList.classList.contains('show')) {
+                icon.classList.remove('fa-folder');
+                icon.classList.add('fa-folder-open');
+            } else {
+                icon.classList.remove('fa-folder-open');
+                icon.classList.add('fa-folder');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="/" class="site-title-link">
+                    <h1 class="site-title">MaxizYB's Blog</h1>
+                </a>
+                <p class="quote-text">Coding is tiring, you need relaxing.</p>
+            </div>
+            <nav class="main-nav">
+                <a href="/" class="nav-link ">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/about/"
+                    class="nav-link ">
+                    <i class="fas fa-user"></i> About
+                </a>
+                <button class="theme-toggle" onclick="toggleDarkMode()">
+                    <i class="fas fa-moon"></i> 切换主题
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout">
+        <!-- 左侧导航栏 -->
+        <aside class="side-nav">
+            <div class="nav-header">
+                <h3><i class="fas fa-folder-tree"></i> 文章分类</h3>
+            </div>
+            <ul class="nav-list">
+                
+                
+                <li class="folder">
+                    <div class="folder-header" onclick="toggleFolder(this)">
+                        <i class="fas fa-folder folder-icon"></i>
+                        <span class="folder-name">jekyll</span>
+                        <span class="folder-count">(2)</span>
+                    </div>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <a href="/blog/2025/04/24/welcome.html" class="file-link">
+                                <span class="file-title">Welcome</span>
+                                <span class="file-date">2025-04-24</span>
+                            </a>
+                        </li>
+                        
+                        <li class="file-item">
+                            <a href="/blog/2025/04/24/welcome-to-jekyll.html" class="file-link">
+                                <span class="file-title">Welcome to Jekyll!</span>
+                                <span class="file-date">2025-04-24</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="folder">
+                    <div class="folder-header" onclick="toggleFolder(this)">
+                        <i class="fas fa-folder folder-icon"></i>
+                        <span class="folder-name">杂记</span>
+                        <span class="folder-count">(1)</span>
+                    </div>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <a href="/blog/2025/04/25/%E5%85%B3%E4%BA%8EAI%E7%9A%84%E6%80%9D%E8%80%83.html" class="file-link">
+                                <span class="file-title">一些想法</span>
+                                <span class="file-date">2025-04-25</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="folder">
+                    <div class="folder-header" onclick="toggleFolder(this)">
+                        <i class="fas fa-folder folder-icon"></i>
+                        <span class="folder-name">笔记</span>
+                        <span class="folder-count">(1)</span>
+                    </div>
+                    <ul class="file-list">
+                        
+                        <li class="file-item">
+                            <a href="/blog/2025/04/25/%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80.html" class="file-link">
+                                <span class="file-title">计算系统基础</span>
+                                <span class="file-date">2025-04-25</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+            </ul>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">计算系统基础</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-04-25T12:00:01+08:00" itemprop="datePublished">Apr 25, 2025
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">MaxizYB</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="计算系统基础">计算系统基础</h1>
 
 <h2 id="考试题型">考试题型</h2>
 
@@ -494,12 +645,25 @@
       </li>
     </ul>
   </li>
-</ul>]]></content><author><name>MaxizYB</name></author><category term="blog" /><category term="笔记" /><summary type="html"><![CDATA[计算系统基础]]></summary></entry><entry><title type="html">一些想法</title><link href="http://localhost:4000/blog/2025/04/25/%E5%85%B3%E4%BA%8EAI%E7%9A%84%E6%80%9D%E8%80%83.html" rel="alternate" type="text/html" title="一些想法" /><published>2025-04-25T12:00:00+08:00</published><updated>2025-04-25T12:00:00+08:00</updated><id>http://localhost:4000/blog/2025/04/25/%E5%85%B3%E4%BA%8EAI%E7%9A%84%E6%80%9D%E8%80%83</id><content type="html" xml:base="http://localhost:4000/blog/2025/04/25/%E5%85%B3%E4%BA%8EAI%E7%9A%84%E6%80%9D%E8%80%83.html"><![CDATA[<h1 id="关于人在ai时代扮演角色的思考">关于人在AI时代扮演角色的思考</h1>
+</ul>
 
-<p>首先，AI时代极大程度上改变了过去人们思考，合作的方式。过去的技术门槛被极大地降低，程序性的工作将不再具有价值，这里的“程序性”指的是低代码实现。未来的方向一定是要关注人的发展，以人为本，就是说我们可以有更多的精力聚焦于方案设计，从更高的抽象级去设计，具有更独到的，明确的，创新的目标。</p>
+  </div><a class="u-url" href="/blog/2025/04/25/%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80.html" hidden></a>
+</article>
 
-<p>人从机械工作中解放，是会获得更加重视，更有价值，还是会被贬低，取决于能否带来不同于AI的idea。</p>]]></content><author><name>MaxizYB</name></author><category term="blog" /><category term="杂记" /><summary type="html"><![CDATA[关于人在AI时代扮演角色的思考]]></summary></entry><entry><title type="html">Welcome</title><link href="http://localhost:4000/blog/2025/04/24/welcome.html" rel="alternate" type="text/html" title="Welcome" /><published>2025-04-24T12:00:01+08:00</published><updated>2025-04-24T12:00:01+08:00</updated><id>http://localhost:4000/blog/2025/04/24/welcome</id><content type="html" xml:base="http://localhost:4000/blog/2025/04/24/welcome.html"><![CDATA[<ul>
-  <li>hello</li>
-  <li>world</li>
-  <li>wow</li>
-</ul>]]></content><author><name>MaxizYB</name></author><category term="blog" /><category term="jekyll" /><summary type="html"><![CDATA[hello world wow]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/blog/2025/04/24/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-04-24T12:00:00+08:00</published><updated>2025-04-24T12:00:00+08:00</updated><id>http://localhost:4000/blog/2025/04/24/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/blog/2025/04/24/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Edit it to change the contents. For more information about Jekyll, check out the <a href="https://jekyllrb.com/">Jekyll documentation</a>.</p>]]></content><author><name>MaxizYB</name></author><category term="blog" /><category term="jekyll" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Edit it to change the contents. For more information about Jekyll, check out the Jekyll documentation.]]></summary></entry></feed>
+            </div>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; MaxizYB - 2025</p>
+            <div class="social-links">
+                <a href="https://github.com/MaxizYB" class="social-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
